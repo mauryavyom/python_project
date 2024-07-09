@@ -1,0 +1,57 @@
+def add(x,y):
+    return x+y
+
+def subtract(x,y):
+    return x-y
+
+def multiply(x,y):
+    return x*y
+
+def divide(x,y):
+    if y==0:
+        print("cannot divide by 0")
+        return 
+    else:
+        return x/y
+
+while True :
+    print()
+    print("                 CALCULATOR  \n")
+    print("choose your operation:-")
+    print("                    1. addition ")
+    print("                    2. subteraction ")
+    print("                    3. multiplication ")
+    print("                    4. division ")
+    print("                    5. EXIT")
+    try:                     
+        choise = int(input("ENTER YOUR CHOISE :"))
+    except :
+        print("ENTER A INTEGER VALUE FROM ABOVE MENTIONED LIMIT .")
+        continue 
+
+    if choise <= 5 and choise > 0:
+        if choise == 5:
+            print("EXIT....")
+            break
+        try:
+            x = int(input("ENTER FIRST NUMBER :"))
+            y = int(input("ENTER SECOND NUMBER :"))
+        except :
+            print("ENTER A INT VALUE NOT A STRING OR OTHER !!")
+            continue
+        if choise == 1:
+            print("ADDITION OF ",x,"AND",y,"IS : ",add(x,y))
+        elif choise == 2:
+            print("Subtraction of ",x,"AND",y,"is :",subtract(x,y))
+            
+        elif choise == 3:
+            print("multiplication of ",x,"AND",y,"is :",multiply(x,y))
+
+        elif choise == 4:
+            print("Division of ",x,"AND",y," is :",divide(x,y))
+        
+    else:
+        print("INVALID INPUT TRY AGAIN .\n")  
+    print()
+        
+            
