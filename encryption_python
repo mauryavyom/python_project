@@ -1,0 +1,25 @@
+# BASIC PROGRAM TO ENCRYPT PASSWORD .
+
+def encrypt (name) :
+    rev ="".join(reversed(name))
+    newchar= "@","#","&","%","^","!","_","-",
+    enc = ""
+    for i in range(len(rev)) :
+        enc += rev[i]
+        enc += newchar[i]
+    return enc
+def decrypt(enc):
+    original = ""
+    for i in range(0,len(enc),2):
+        original += enc[i]
+        original_ =original[::-1]
+    return original_
+
+name = input("ENTER YOUR PASSWORD (ONLY OF 8 CHARACTER AND LESS ): ").strip()
+while len(name) > 8:
+    print("Error: Password must be 8 characters or less.")
+    name = input("Please enter again: ")
+
+passw = encrypt(name)
+print("ORIGINAL PASSWORD:",decrypt(passw))
+print("ENCRYPTED PASSSWORD :",passw)
