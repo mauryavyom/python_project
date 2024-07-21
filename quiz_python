@@ -1,0 +1,47 @@
+                            ###########################################################################################################
+                            #                                                                                                         #                        
+                            #                                           A BASIC FRAME OF QUIZ                                         #
+                            #                               YOU CAN MODIFY IT AS PER YOUR QUESTIONS QUENTITY                          #
+                            ###########################################################################################################
+import sys
+
+questions = [
+    [" Who developed Python Programming Language?", "Wick van Rossum","Rasmus Lerdorf","Guido van Rossum ","Niene Stom", "Guido van Rossum "],
+    ["Which type of Programming does Python support ?","object-oriented programming","structured programming","functional programming","all of the mentioned","all of the mentioned"],
+    ["Is Python case sensitive when dealing with identifiers ?","no","yes "," machine dependent","none of the mentioned","yes"]
+]
+
+money = [5000, 10000, 15000]
+
+score = 0
+
+for i in range(len(questions)):
+    print(f"QUESTION {i+1}: {questions[i][0]}")
+    for index, option in enumerate(questions[i][1:5], start=1):
+        print(f"{index}. {option}")
+    print()
+    
+    while True:
+        try:
+            answer = input("ENTER YOUR ANSWER (1-4): ").strip().lower()
+            answer_index = int(answer) - 1  # Convert to zero-based index
+            if 0 <= answer_index < 4:
+                break  # Valid input, break out of the loop
+            else:
+                print("Please enter a number between 1 and 4.")
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 4.")
+            print()
+    
+    correct_answer = questions[i][5].lower()
+    if questions[i][answer_index + 1].lower() == correct_answer:
+        print("YOUR ANSWER IS CORRECT!!!")
+        score += money[i]
+    else:
+        print(f"YOUR ANSWER IS WRONG. CORRECT ANSWER IS: {questions[i][5]}")
+    
+    print(f"YOUR TOTAL SCORE IS: {score}")
+    print()
+
+print(f"CONGRATULATIONS! YOU HAVE COMPLETED THE QUIZ.")
+print(f"YOUR FINAL SCORE IS: {score}")
