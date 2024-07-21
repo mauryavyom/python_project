@@ -1,0 +1,27 @@
+# BASIC PROGRAM TO GREET USER AS PE THE TIME .
+
+import time 
+from datetime import datetime
+
+# SAMAY REPRESENT'S TO TIME .
+# HERE H = HOUR , M = MINUTS , S = SECONDS .
+samay= time.strftime('%H:%M:%S')
+
+# NOW REPRESENTS TO  DATE .
+# HERE A = NAME OF WEEK DAY , d = DATE , B = MONTH , Y = YEAR.
+now = datetime.now()
+data = now.strftime('%A %d %B %Y')
+hour = int(time.strftime('%H'))
+
+if hour <=12 and hour >=0:
+    print("GOOD MORNING SIR .")
+elif hour >= 13 and hour <=16:
+    print("GOOD AFTERNOON SIR .")   
+elif hour >=17 and hour<= 18:
+    print("GOOD EVENING SIR .")
+elif hour >=19 and hour<= 24:
+    print("GOOD NIGHT SIR .")
+    
+print(samay)
+print(data)
+
